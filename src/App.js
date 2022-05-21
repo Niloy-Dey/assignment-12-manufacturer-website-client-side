@@ -2,6 +2,7 @@ import { Route, Router, Routes } from "react-router-dom";
 import AllTools from "./Component/AllTools/AllTools";
 import Home from "./Component/Home/Home";
 import Login from "./Component/Login/Login";
+import NotFound from "./Component/NotFound/NotFound";
 import Signup from "./Component/Signup/Signup";
 import Footer from "./Shared/Footer";
 import Navbar from "./Shared/Navbar";
@@ -18,7 +19,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/dashboard" element={<></>}></Route>
-        <Route path="/" element={<Login></Login>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
         
       </Routes>
       <Footer></Footer>

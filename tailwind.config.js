@@ -11,10 +11,11 @@ module.exports = {
           secondary: "#fde047",
           accent: "#37CDBE",
           neutral: "#3D4451",
-          "base-100": "#ffffff",
+          "base-100": "#fff",
           info: '#3ABFF8',
           success: '#36D399',
-          warning:'#FBBD23'
+          warning:'#FBBD23',
+          error: "#ede9fe",
         },
       },
       "dark",

@@ -39,7 +39,9 @@ const Purchase = () => {
             Image: Image,
             Price: Price,
             Description: Description,
-            Quantity: Quantity
+            Quantity: Quantity,
+            TotalQuantity: newQuantity,
+            TotalPrice: totalPrice
         }
         fetch(`http://localhost:5000/orderDetails`, {
             method: 'POST',

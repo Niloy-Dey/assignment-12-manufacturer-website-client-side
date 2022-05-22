@@ -20,6 +20,8 @@ const Navbar = () => {
                             <li><NavLink to="/allTools" >All Tools</NavLink></li>
                             <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                             <li><NavLink to="/login">Login</NavLink></li>
+                            <li><NavLink to="/blog">Blog</NavLink></li>
+                            <li><NavLink to="/addProduct">Add Product</NavLink></li>
 
 
                         </ul>
@@ -28,10 +30,12 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                    <li><NavLink to="/home" >Home</NavLink></li>
-                    <li><NavLink to="/allTools" >All Tools</NavLink></li>
-                    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                    <li><NavLink to="/login">Login</NavLink></li>
+                        <li><NavLink to="/home" >Home</NavLink></li>
+                        <li><NavLink to="/allTools" >All Tools</NavLink></li>
+                        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                        <li><NavLink to="/login">Login</NavLink></li>
+                        <li><NavLink to="/blog">Blog</NavLink></li>
+                        <li><NavLink to="/addProduct">Add Product</NavLink></li>
 
                     </ul>
                 </div>

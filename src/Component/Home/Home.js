@@ -3,17 +3,13 @@ import Banner from './Banner';
 import HomeTools from './HomeTools';
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import useProduct from '../../hooks/useProduct';
 
 
 const Home = () => {
 
-    const [tools, setTools] = useState([]);
-    useEffect(() => {
-        fetch(`http://localhost:5000/tools`)
-            .then(res => res.json())
-            .then(data => setTools(data));
-    }, [])
-
+    const [tools, setTools] = useProduct({});
+   
     const filteredTools = tools?.slice(0, 6)
 
     /* navigating all tools page  */

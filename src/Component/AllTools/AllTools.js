@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import rating from '../../assets/rating.ico'
+import Purchase from '../Purchase/Purchase';
 const AllTools = () => {
 
 
     const [tools, setTools] = useState([]);
     useEffect(() => {
-        fetch('tools.json')
+        fetch(`http://localhost:5000/tools`)
             .then(res => res.json())
             .then(data => setTools(data));
     }, [])
 
+    const navigate = useNavigate();
+    const handleOrder=(id) =>{
+        // navigate('/purchase', {state:tool})
+        // console.log(tool);
+    
+    }
     return (
 
         <div className='bg-slate-100 py-24  px-10 '>
@@ -22,7 +30,7 @@ const AllTools = () => {
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 '>
                 {
                     tools.map(tool => {
-                        const { Image, Name, Price, Description, Quantity } = tool;
+                        const { _id,  Image, Name, Price, Description, Quantity } = tool;
 
                         return (
                             <div class="card w-96 bg-base-100 shadow-xl">
@@ -33,12 +41,12 @@ const AllTools = () => {
                                         {/* <div class="badge badge-secondary">NEW</div> */}
                                     </h2>
                                     <p>Price: {Price} </p>
-                                    <p>Quantity: {Quantity} </p>
+                                    <p>Available Quantity: {Quantity} </p>
                                     <p>{Description}</p>
 
                                     <div className="flex  items-center gap-4">
                                         <div class="card-actions justify-start">
-                                            <div class="btn btn-secondary  font-bold  btn-sm ">Order</div>
+                                            <button onClick={() => handleOrder(_id) } class="btn btn-secondary  font-bold  btn-sm ">Order</button>
                                         </div>
                                         <div class="card-actions justify-end">
                                             <div class="badge badge-outline">Ratings </div>

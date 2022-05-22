@@ -15,7 +15,7 @@ const HomeTools = ({ tool }) => {
                         {/* <div class="badge badge-secondary">NEW</div> */}
                     </h2>
                     <p>Price: {Price} </p>
-                    <p>Quantity: {Quantity} </p>
+                    <p>Available Quantity: {Quantity} </p>
                     <p>{Description}</p>
 
                     <div className="flex  items-center gap-4">

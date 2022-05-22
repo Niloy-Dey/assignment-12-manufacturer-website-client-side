@@ -1,7 +1,12 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../firebase.init';
 
 const Navbar = () => {
+
+    const [user, loading, error] = useAuthState(auth);
+
     return (
         <div className=''>
             <div className="navbar bg-base-100 shadow-lg fixed top-0 z-50 ">

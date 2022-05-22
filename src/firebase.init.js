@@ -1,4 +1,22 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBv0kzPaExcZzfunjgk_4ZtnE3KVzKE6Po",
+  authDomain: "manufacturing-website.firebaseapp.com",
+  projectId: "manufacturing-website",
+  storageBucket: "manufacturing-website.appspot.com",
+  messagingSenderId: "219978470505",
+  appId: "1:219978470505:web:eb9bb5c4b3be736620fef8"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+export default auth;
+
+
+/* import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
 
 
@@ -13,4 +31,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
-export default auth;
+export default auth; */

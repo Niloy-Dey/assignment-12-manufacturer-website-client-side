@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-// import  { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-// import auth from '../../firebase.init';
-// import { useForm } from "react-hook-form";
-// import Loading from '../Shared/Loading';
-// import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading';
 // import useToken from '../../hooks/useToken';
 const Login = () => {
 
@@ -18,9 +14,8 @@ const Login = () => {
 
 
 
-
     /* Sign in with google  */
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     /* React hook from validation  process*/
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -28,37 +23,35 @@ const Login = () => {
     /* sign in with email and password  */
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
-    // const [token] = useToken(user || gUser);
+  
     /* showing user in login and navigate current page you access that*/
     useEffect(() => {
-        if (user || gUser) {
+        if (user || googleUser) {
             // console.log(user, gUser);
             navigate(from, { replace: true });
         }
-    }, [user || gUser , from, navigate,])
+    }, [user || googleUser , from, navigate]);
 
 
-    /*using  Loading  */
-    if (loading || gLoading) {
+    /*using  Loading */
+    if (loading || googleLoading) {
         return <Loading></Loading>
     }
     /* showing error  */
-    if (error || gError) {
-        signInError = <p className='text-red-500'> <small>{error?.message || gError?.message} </small></p>
+    if (error || googleError) {
+        signInError = <p className='text-red-500'> <small>{error?.message || googleError?.message} </small></p>
     }
     const onSubmit = data => {
-        // console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
-    }
+    };
 
-const Login = () => {
     return (
         <div className='pt-20 '>
             <div className="hero ">
                 <div className="hero-content w-full flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <h1 className="text-2xl font-bold text-center text-secondary">Login Now</h1>
+                            <h1 className="text-2xl font-bold text-center text-warning">Login Now</h1>
                             <form onSubmit={handleSubmit(onSubmit)}>
 
                                 <div className="form-control w-full max-w-xs">
@@ -110,10 +103,10 @@ const Login = () => {
                                     </label>
                                 </div>
                                 {signInError}
-                                <input className='w-full max-w-xs  btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary ' value="Login" type="submit" />
+                                <input className='w-full max-w-xs  btn bg-warning uppercase text-white font-bold  ' value="Login" type="submit" />
                             </form>
 
-                            <p><small>New to Doctors Portal ?</small> <Link to="/signUp" className='text-secondary'><b>Create a New Account</b></Link>  </p>
+                            <p><small>New to Hardware Tools ?</small> <Link to="/signUp" className='text-success'><b>Create a New Account</b></Link>  </p>
 
                             <div className='divider'>OR</div>
                             <button onClick={() => signInWithGoogle()} className='btn btn-outline '>Continue With Google</button>
@@ -123,6 +116,6 @@ const Login = () => {
             </div>
         </div>
     );
-                                    }};
+};
 
 export default Login;

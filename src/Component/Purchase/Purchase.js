@@ -7,8 +7,8 @@ import useProductDetails from '../../hooks/useProductDetails';
 const Purchase = () => {
     const { productId } = useParams();
     // console.log(productId);
-    const [tool] = useProductDetails(productId);
-    const [tools] = useProduct({});
+    const [tool, setTool] = useProductDetails(productId);
+    const [tools, setTools] = useProduct({});
     const singleProduct = tools.find(pd => pd._id === productId)
 
     // console.log(singleProduct);
@@ -22,19 +22,19 @@ const Purchase = () => {
         setNewQuantity(increase);
         const calculatePrice = parseFloat(Price) * increase;
         setTotalPrice(calculatePrice);
-        console.log(increase);
+        // console.log(increase);
     }
     const handleDecrease = (event) => {
         const decrease = newQuantity - 1;
         setNewQuantity(decrease);
         const calculatePrice = parseFloat(Price) * decrease;
         setTotalPrice(calculatePrice);
-        console.log(decrease);
+        // console.log(decrease);
     }
 
     const handleOrderProduct = () => {
         const orderDetails = {
-            _id: _id,
+            id: _id,
             Name: Name,
             Image: Image,
             Price: Price,

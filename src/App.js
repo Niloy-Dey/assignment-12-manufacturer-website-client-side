@@ -3,7 +3,7 @@ import AddProduct from "./Component/AddProduct/AddProduct";
 import AllTools from "./Component/AllTools/AllTools";
 import Blog from "./Component/Blog/Blog";
 import AddReview from "./Component/Dashboard/AddReview";
-import AllOrders from "./Component/Dashboard/AllOrders";
+import AllOrder from "./Component/Dashboard/AllOrders";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import MyOrder from "./Component/Dashboard/MyOrder";
 import Payment from "./Component/Dashboard/Payment";
@@ -34,12 +34,13 @@ function App() {
         <Route path="/BusinessSummry" element={<BusinessSummry></BusinessSummry>}></Route>
         <Route path="/review" element={<Review></Review>}></Route>
         <Route path="/addProduct" element={<AddProduct></AddProduct>}></Route>
+        
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-                <Route index element={<Dashboard></Dashboard>}></Route>
+                {/* <Route index element={<Dashboard></Dashboard>}></Route> */}
                 <Route path="myOrders"  element={<MyOrder></MyOrder>}></Route>
                 <Route path="addReview"  element={<AddReview></AddReview>}></Route>
                 <Route path="payment"  element={<Payment></Payment>}></Route>
-                <Route path="allOrders"  element={<AllOrders></AllOrders>}></Route>
+                <Route path="allOrder"  element={<AllOrder></AllOrder>}></Route>
 
         </Route>
         

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import AllUsers from './AllUsers';
 
 const Users = () => {
     const [users, setUsers ] = useState([]);
+    
+    // console.log(email);
     useEffect(()=>{
         fetch(`http://localhost:5000/users`)
             .then(res => res.json())
             .then(data => setUsers(data));
 } , [])
 
-const handleDeleteUser = () =>{
 
-}
+
     return (
         <div className='mt-22'>
-            <h1 className='text-center text-2xl font-bold text-orange-400'>My Orders</h1>
+            <h1 className='text-center text-2xl font-bold text-orange-400'>My User</h1>
             <div class=" mt-5 overflow-x-auto">
                 <table class="table w-full">
                     <thead>
@@ -28,15 +30,7 @@ const handleDeleteUser = () =>{
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) =>
-                               
-                                    <tr>
-                                        <td>{index+1} </td>
-                                        <td>{user.email}</td>
-                                        <td><button  className='bg-green-400 text-white p-2 rounded-2xl'>Make Admin</button></td>
-                                        <td><button onClick={() => handleDeleteUser(user._id)} className='bg-red-400 text-white p-2 rounded-2xl'>Delete User</button></td>
-                                    </tr>
-                            )
+                            users.map((user, index) => <AllUsers key={user._id} user={user} index={index}></AllUsers>                            )
                         }
                     </tbody>
                 </table>

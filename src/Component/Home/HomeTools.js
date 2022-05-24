@@ -15,8 +15,8 @@ const HomeTools = ({ tool }) => {
     }
     // console.log(tools.length);
     return (
-        <div className='mt-20 '>
-            <div class="card w-96 bg-base-100 shadow-xl">
+        <div className='mt-20 mx-10  flex justify-center items-center'>
+            <div class="card w-80 bg-base-100 shadow-xl">
                 <figure><img className="h-40 w-full" src={Image} alt="" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">

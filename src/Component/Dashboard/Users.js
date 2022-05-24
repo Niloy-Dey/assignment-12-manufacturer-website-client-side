@@ -15,7 +15,7 @@ const Users = () => {
 
     return (
         <div className='mt-22'>
-            <h1 className='text-center text-2xl font-bold text-orange-400'>My User</h1>
+            <h1 className='text-center text-2xl font-bold text-orange-400'>All User</h1>
             <div class=" mt-5 overflow-x-auto">
                 <table class="table w-full">
                     <thead>

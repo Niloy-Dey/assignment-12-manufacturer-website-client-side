@@ -33,7 +33,10 @@ const ManageAllProduct = () => {
                 {
                     tools.map(tool =>
                         <div className='card-style my-5  ' key={tool.id}>
-                            <div className='flex justify-between w-90 shadow-lg rounded-lg p-10 '> <img className='w-20' src={tool.Image} alt="" />  <h5> <b>{tool.Name}</b> </h5><h5><button onClick={() => handleDelete(tool._id)} className="delete-button  bg-green-400  p-2 rounded-lg text-white "> Delete </button></h5></div>
+                            <div className='flex justify-between w-90 shadow-lg rounded-lg p-10 '>
+                                 <img className='w-20' src={tool.Image} alt="" />  
+                                 <h5> <b>{tool.Name}</b> </h5>
+                                 <h5><button onClick={() => handleDelete(tool._id)} className="delete-button  bg-green-400  p-2 rounded-lg text-white "> Delete </button></h5></div>
                         </div>)
                 }
 

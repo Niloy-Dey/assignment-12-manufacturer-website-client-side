@@ -28,8 +28,14 @@ const Dashboard = () => {
                     <li><Link to="/dashboard/addReview">Review</Link></li>
                     <li><Link to="/dashboard/payment">Payment</Link></li>
                     <li><Link to="/dashboard/myProfile">My Profile</Link></li>
+                   
 
 
+                    {
+                        admin && <>
+                             <li><Link to="/dashboard/allOrders">All Order</Link></li>
+                        </>
+                    }
                     {
                         admin && <>
                             <li><Link to="/dashboard/users">All Users</Link></li>

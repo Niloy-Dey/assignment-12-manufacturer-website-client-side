@@ -2,8 +2,9 @@ import { Route, Router, Routes } from "react-router-dom";
 import AddProduct from "./Component/AddProduct/AddProduct";
 import AllTools from "./Component/AllTools/AllTools";
 import Blog from "./Component/Blog/Blog";
+import Contract from "./Component/Contract/Contract";
 import AddReview from "./Component/Dashboard/AddReview";
-import AllOrder from "./Component/Dashboard/AllOrders";
+import AllOrders from "./Component/Dashboard/AllOrders";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import MyOrder from "./Component/Dashboard/MyOrder";
 import Myprofile from "./Component/Dashboard/Myprofile";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/BusinessSummry" element={<BusinessSummry></BusinessSummry>}></Route>
         <Route path="/review" element={<Review></Review>}></Route>
         <Route path="/portFolio" element={<MyPortFolio></MyPortFolio>}></Route>
+        <Route path="/contract" element={<Contract></Contract>}></Route>
 
         <Route path="/addProduct" element={
           <RequireAuth>
@@ -61,7 +63,7 @@ function App() {
           <Route path="myOrders" element={<MyOrder></MyOrder>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
           <Route path="payment" element={<Payment></Payment>}></Route>
-          <Route path="allOrder" element={<AllOrder></AllOrder>}></Route>
+          <Route path="allOrders" element={<AllOrders></AllOrders>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
 
         </Route>

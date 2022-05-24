@@ -31,21 +31,25 @@ const MyOrder = () => {
                     <thead>
                       
                         <tr>
+                            <th></th>
                             <th>Product Name</th>
                             <th>User Name</th>
                             <th>Status</th>
+                            <th>Pay button</th>
                             <th>Delete Order</th>
                         </tr>
                      
                     </thead>
                     <tbody>
                         {
-                            orders.map(order =>
+                            orders.map((order, index) =>
                                
                                     <tr>
+                                        <td>{index+1} </td>
                                         <td>{order.Name}</td>
                                         <td>user name</td>
-                                        <td>Pending</td>
+                                        <td>Pending..</td>
+                                        <td><button  className='bg-green-400 text-white p-2 rounded-2xl'>Payment</button></td>
                                         <td><button onClick={() => handleDeleteOrder(order._id)} className='bg-red-400 text-white p-2 rounded-2xl'>Delete Order</button></td>
                                     </tr>
                             )

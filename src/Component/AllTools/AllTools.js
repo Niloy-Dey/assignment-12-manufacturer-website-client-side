@@ -4,6 +4,9 @@ const AllTools = () => {
 
 
     const [tools, setTools] = useProduct({});
+    // if(isLoading){
+    //     <Loading></Loading>
+    // }
 
     return (
         <div className='bg-slate-100 py-24  px-10 '>
@@ -15,7 +18,7 @@ const AllTools = () => {
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 '>
                 {
-                    tools.map(tool => <SeeAllTools key={tool._id} tool={tool}></SeeAllTools>)
+                    tools?.map(tool => <SeeAllTools key={tool._id} tool={tool}></SeeAllTools>)
                 }
             </div>
 

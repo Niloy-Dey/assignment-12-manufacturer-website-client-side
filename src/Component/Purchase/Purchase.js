@@ -93,6 +93,8 @@ const Purchase = () => {
                             <div className='border-2 p-2 border-red-400'>{
                                 totalPrice ? <h4>Total price : <b>{totalPrice}</b> </h4> : <h4>Total price : <b> {Price}</b> </h4>
                             }</div>
+
+                            
                             <button onClick={handleOrderProduct} className='btn btn-primary bg-orange-400 m-1 ' >Order</button>
                         </div>
                     </div>

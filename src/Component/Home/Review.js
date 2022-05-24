@@ -19,7 +19,7 @@ const Review = () => {
                     {
                         reviews?.map( review => 
                             <div className='my-5 bg-primary p-6 w-80  rounded-lg  shadow-lg '>
-                                <h1 className='py-3'><b>Client Name:</b>  {review.name} </h1>
+                                <h1 className='py-3 text-xl '><b>Client Name:</b>  {review.name} </h1>
                                 <p><b>Review: </b>{review.comment} </p>
                             </div>
                             )

@@ -7,7 +7,7 @@ const AllUsers = ({ user, index }) => {
 
 
     const makeAdmin = () => {
-        const url = `http://localhost:5000/user/admin/${email}`
+        const url = `https://mysterious-forest-77053.herokuapp.com/user/admin/${email}`
         fetch(url,  {
             method: 'PUT',
             headers: {

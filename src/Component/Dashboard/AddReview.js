@@ -5,7 +5,7 @@ const AddReview = () => {
    
         
 
-        // const url = `http://localhost:5000/tools`;
+        // const url = `https://mysterious-forest-77053.herokuapp.com/tools`;
         // fetch(url, {
         //     method: 'POST',
         //     headers: {
@@ -29,7 +29,7 @@ const AddReview = () => {
         // console.log(review);
 
 
-         const url = `http://localhost:5000/review`;
+         const url = `https://mysterious-forest-77053.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

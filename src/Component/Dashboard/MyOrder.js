@@ -22,7 +22,7 @@ const MyOrder = () => {
         // console.log(id);
         const proceed = window.confirm('Are you sure delete this item ?');
         if (proceed) {
-            const url = `http://localhost:5000/orderDetails/${id}`;
+            const url = `https://mysterious-forest-77053.herokuapp.com/orderDetails/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

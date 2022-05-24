@@ -5,7 +5,7 @@ const useProduct = () =>{
     const [tools, setTools] = useState([]);
 // console.log(tools);
     useEffect(()=>{
-        fetch(`http://localhost:5000/tools`)
+        fetch(`https://mysterious-forest-77053.herokuapp.com/tools`)
         .then(res => res.json())
         .then(data =>setTools(data));
     } , [])

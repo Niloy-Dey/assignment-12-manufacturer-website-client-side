@@ -4,7 +4,7 @@ const useProductDetails = productId =>{
     const [tool , setTool] = useState({});
 
     useEffect(() =>{
-            const url = `http://localhost:5000/tool/${productId}`
+            const url = `https://mysterious-forest-77053.herokuapp.com/tool/${productId}`
             // console.log(url);
             fetch(url)
             .then(res => res.json())

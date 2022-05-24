@@ -1,8 +1,11 @@
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import useOrders from '../../hooks/useOrders';
 
 const MyOrder = () => {
 
    const [orders, setOrders] = useOrders([]);
+   const [user] = useAuthState(auth);
 
 
     const handleDeleteOrder = (id) => {
@@ -47,7 +50,7 @@ const MyOrder = () => {
                                     <tr>
                                         <td>{index+1} </td>
                                         <td>{order.Name}</td>
-                                        <td>user name</td>
+                                        <td>{user.email}</td>
                                         <td>Pending..</td>
                                         <td><button  className='bg-green-400 text-white p-2 rounded-2xl'>Payment</button></td>
                                         <td><button onClick={() => handleDeleteOrder(order._id)} className='bg-red-400 text-white p-2 rounded-2xl'>Delete Order</button></td>

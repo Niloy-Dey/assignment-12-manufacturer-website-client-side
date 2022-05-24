@@ -12,13 +12,16 @@ const MyPortFolio = () => {
                 <div>
                     <h2 class="card-title  ml-10  font-bold text-2xl ">Niloy Dey</h2>
                     <p class="card-title ml-7 font-bold text-xl ">Web Developer</p>
-                    <p class="card-title   font-bold text-xl ">niloydey@gmail.com</p>
+                    <p class="card-title   font-bold text-xl ">niloydeyce@gmail.com</p>
                 </div>
             </div>
             <div className='my-20  mx-20 grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="my-3 card-title text-orange-400">Educational Qualification </h2>
+                        <hr />
+                        <h2 class="card-title">Bsc Honors in cse</h2>
+                        <p><b>BGC TRUST UNIVERSITY </b></p>
                         <hr />
                         <h2 class="card-title">Higher secondary certificate</h2>
                         <p><b>BEPZA PUBLIC SCHOOL AND COLLEGE</b></p>

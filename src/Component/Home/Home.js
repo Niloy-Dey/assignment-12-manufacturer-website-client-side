@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import useProduct from '../../hooks/useProduct';
 import Review from './Review';
+import BusinessSummry from './BusinessSummry';
 
 
 const Home = () => {
@@ -41,6 +42,7 @@ const Home = () => {
 
 
             <Review></Review>
+            <BusinessSummry></BusinessSummry>
 
         </div>
     );

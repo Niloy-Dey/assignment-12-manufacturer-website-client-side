@@ -3,14 +3,16 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
+import useAdmin from '../hooks/useAdmin';
 
 const Navbar = () => {
 
     const [user, gUser, loading, error] = useAuthState(auth);
     const logOut = () => {
         signOut(auth);
-        // localStorage.removeItem('accessToken');
     }
+
+    const [admin] = useAdmin(user || gUser);
 
     return (
         <div className=''>
@@ -26,9 +28,10 @@ const Navbar = () => {
                             {
                                 user && <li><Link to="/dashboard">Dashboard</Link></li>
                             }
-                            {/* <li><NavLink to="/login">Login</NavLink></li> */}
                             <li><NavLink to="/blog">Blog</NavLink></li>
-                            <li><NavLink to="/addProduct">Add Product</NavLink></li>
+                            {
+                                admin && <li><NavLink to="/addProduct">Add Product</NavLink></li> 
+                            }
                             <li><NavLink to="/portFolio">My Portfolio</NavLink></li>
                             <li>{user ? <button className="" onClick={logOut}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
 
@@ -43,9 +46,10 @@ const Navbar = () => {
                         {
                             user && <li><Link to="/dashboard">Dashboard</Link></li>
                         }
-                        {/* <li><NavLink to="/login">Login</NavLink></li> */}
                         <li><NavLink to="/blog">Blog</NavLink></li>
-                        <li><NavLink to="/addProduct">Add Product</NavLink></li>
+                        {
+                            admin && <li><NavLink to="/addProduct">Add Product</NavLink></li> 
+                        }
                         <li><NavLink to="/portFolio">My Portfolio</NavLink></li>
                         <li>{user ? <button className="" onClick={logOut}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
 

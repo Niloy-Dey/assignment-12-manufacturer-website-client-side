@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import useProduct from '../../hooks/useProduct';
 import useProductDetails from '../../hooks/useProductDetails';
 
@@ -10,6 +12,9 @@ const Purchase = () => {
     const [tool, setTool] = useProductDetails(productId);
     const [tools, setTools] = useProduct({});
     const singleProduct = tools.find(pd => pd._id === productId)
+    const [user] = useAuthState(auth);
+    const email = user?.email;
+    // console.log(email);
 
     // console.log(singleProduct);
     const { _id, Image, Name, Price, Description, Quantity } = singleProduct || {};
@@ -41,9 +46,11 @@ const Purchase = () => {
             Description: Description,
             Quantity: Quantity,
             TotalQuantity: newQuantity,
-            TotalPrice: totalPrice
+            TotalPrice: totalPrice,
+            Email: email
         }
-        fetch(`http://localhost:5000/orderDetails`, {
+        // console.log(email);
+        fetch(`http://localhost:5000/orderDetails/`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

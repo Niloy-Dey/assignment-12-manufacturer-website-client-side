@@ -6,7 +6,17 @@ const MyOrder = () => {
 
    const [orders, setOrders] = useOrders([]);
    const [user] = useAuthState(auth);
+   const email = user?.email;
 
+    
+   const selectedOrder = orders.filter( o => {
+       console.log(o.Email);
+       if( o.Email === email ){
+           return o ;
+       }
+   } ); 
+//    console.log(orders);
+//    console.log(selectedOrder);
 
     const handleDeleteOrder = (id) => {
         // console.log(id);
@@ -45,7 +55,7 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) =>
+                            selectedOrder.map((order, index) =>
                                
                                     <tr>
                                         <td>{index+1} </td>

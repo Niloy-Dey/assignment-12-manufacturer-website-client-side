@@ -12,6 +12,7 @@ import BusinessSummry from "./Component/Home/BusinessSummry";
 import Home from "./Component/Home/Home";
 import Review from "./Component/Home/Review";
 import Login from "./Component/Login/Login";
+import MyPortFolio from "./Component/MyPortFolio/MyPortFolio";
 import NotFound from "./Component/NotFound/NotFound";
 import Purchase from "./Component/Purchase/Purchase";
 import RequireAuth from "./Component/RequireAuth/RequireAuth";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/Blog" element={<Blog></Blog>}></Route>
         <Route path="/BusinessSummry" element={<BusinessSummry></BusinessSummry>}></Route>
         <Route path="/review" element={<Review></Review>}></Route>
+        <Route path="/portFolio" element={<MyPortFolio></MyPortFolio>}></Route>
 
         <Route path="/addProduct" element={
           <RequireAuth>

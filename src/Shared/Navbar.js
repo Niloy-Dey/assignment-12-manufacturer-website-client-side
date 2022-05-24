@@ -29,8 +29,13 @@ const Navbar = () => {
                                 user && <li><Link to="/dashboard">Dashboard</Link></li>
                             }
                             <li><NavLink to="/blog">Blog</NavLink></li>
+
                             {
-                                admin && <li><NavLink to="/addProduct">Add Product</NavLink></li> 
+                                admin && <li><NavLink to="/manageAllProduct">Manage Product</NavLink></li>
+                            }
+
+                            {
+                                admin && <li><NavLink to="/addProduct">Add Product</NavLink></li>
                             }
                             <li><NavLink to="/portFolio">My Portfolio</NavLink></li>
                             <li>{user ? <button className="" onClick={logOut}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
@@ -48,7 +53,10 @@ const Navbar = () => {
                         }
                         <li><NavLink to="/blog">Blog</NavLink></li>
                         {
-                            admin && <li><NavLink to="/addProduct">Add Product</NavLink></li> 
+                            admin && <li><NavLink to="/manageAllProduct">Manage Product</NavLink></li>
+                        }
+                        {
+                            admin && <li><NavLink to="/addProduct">Add Product</NavLink></li>
                         }
                         <li><NavLink to="/portFolio">My Portfolio</NavLink></li>
                         <li>{user ? <button className="" onClick={logOut}>Sign Out</button> : <Link to="/login">Login</Link>}</li>

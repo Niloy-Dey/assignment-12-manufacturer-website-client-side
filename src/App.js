@@ -13,6 +13,7 @@ import BusinessSummry from "./Component/Home/BusinessSummry";
 import Home from "./Component/Home/Home";
 import Review from "./Component/Home/Review";
 import Login from "./Component/Login/Login";
+import ManageAllProduct from "./Component/ManageAllProduct/ManageAllProduct";
 import MyPortFolio from "./Component/MyPortFolio/MyPortFolio";
 import NotFound from "./Component/NotFound/NotFound";
 import Purchase from "./Component/Purchase/Purchase";
@@ -64,6 +65,12 @@ function App() {
           <Route path="users" element={<Users></Users>}></Route>
 
         </Route>
+
+        <Route path="/manageAllProduct" element={
+          <RequireAuth>
+            <ManageAllProduct></ManageAllProduct>
+          </RequireAuth>
+        }></Route>
 
       </Routes>
       <Footer></Footer>

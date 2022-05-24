@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import banner from '../../assets/Welcome.png';
 import auth from '../../firebase.init';
 const Dashboard = () => {
-    const [user] = useAuthState(auth);
+    
     // const [admin] = useAdmin(user);
     // console.log(user.email);
     return (
@@ -21,10 +21,8 @@ const Dashboard = () => {
                 
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto h-[100vh] w-48 bg-slate-300 text-base-content ">
-                    <div>
-                    <li><h1 className='text-xl font-bold text-center'>My profile</h1></li>
-                    <li> <h1 className='text-xl font-bold text-center pl-0 '>{user.email}</h1></li>
-                    </div>
+                   
+                    <li><Link to="/dashboard/myProfile">My Profile</Link></li>
                     <li><Link to="/dashboard/myOrders">My Orders</Link></li>
                     <li><Link to="/dashboard/addReview">Review</Link></li>
                     <li><Link to="/dashboard/payment">Payment</Link></li>

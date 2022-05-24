@@ -6,6 +6,7 @@ import AddReview from "./Component/Dashboard/AddReview";
 import AllOrder from "./Component/Dashboard/AllOrders";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import MyOrder from "./Component/Dashboard/MyOrder";
+import Myprofile from "./Component/Dashboard/Myprofile";
 import Payment from "./Component/Dashboard/Payment";
 import Users from "./Component/Dashboard/Users";
 import BusinessSummry from "./Component/Home/BusinessSummry";
@@ -55,6 +56,7 @@ function App() {
             <Dashboard></Dashboard>
           </RequireAuth>
         }>
+          <Route path="myProfile" element={<Myprofile></Myprofile>}></Route>
           <Route path="myOrders" element={<MyOrder></MyOrder>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
           <Route path="payment" element={<Payment></Payment>}></Route>

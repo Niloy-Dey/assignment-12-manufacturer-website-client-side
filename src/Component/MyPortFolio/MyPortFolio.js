@@ -15,7 +15,7 @@ const MyPortFolio = () => {
                     <p class="card-title   font-bold text-xl ">niloydey@gmail.com</p>
                 </div>
             </div>
-            <div className='my-20  mx-40 grid gap-10 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
+            <div className='my-20  mx-20 grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="my-3 card-title text-orange-400">Educational Qualification </h2>
@@ -43,7 +43,19 @@ const MyPortFolio = () => {
                         
                     </div>
                 </div>
+
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="my-3 card-title text-orange-400">List of technologies or skills i have as a web developer. </h2>
+                        <h3>Html, Css , Css frameWork , javascript, ES6, react js, react library, node js, database, </h3>
+                        <p><b>Above all I have to be quick learner</b></p>
+                        
+                    </div>
+                </div>
+                
             </div>
+           
+
         </div>
     );
 };

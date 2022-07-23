@@ -11,7 +11,7 @@ const AddProduct = () => {
         const tool = {Name ,Image,Quantity, Price,  Description};
         
 
-        const url = `https://mysterious-forest-77053.herokuapp.com/tools`;
+        const url = `https://manufacture-n.herokuapp.com/tools`;
         fetch(url, {
             method: 'POST',
             headers: {

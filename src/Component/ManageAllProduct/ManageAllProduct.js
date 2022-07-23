@@ -11,7 +11,7 @@ const ManageAllProduct = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure delete this item ?');
         if (proceed) {
-            const url = `https://mysterious-forest-77053.herokuapp.com/tools/${id}`;
+            const url = `https://manufacture-n.herokuapp.com/tools/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

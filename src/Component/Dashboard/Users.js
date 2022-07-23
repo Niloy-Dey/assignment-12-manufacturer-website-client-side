@@ -6,7 +6,7 @@ const Users = () => {
     
     // console.log(email);
     useEffect(()=>{
-        fetch(`https://mysterious-forest-77053.herokuapp.com/users`)
+        fetch(`https://manufacture-n.herokuapp.com/users`)
             .then(res => res.json())
             .then(data => setUsers(data));
 } , [])

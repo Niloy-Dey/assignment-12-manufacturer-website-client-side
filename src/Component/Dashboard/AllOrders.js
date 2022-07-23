@@ -10,7 +10,7 @@ const AllOrders = () => {
     const email = user?.email;
     console.log(allOrders);
     useEffect(() => {
-            fetch(`https://mysterious-forest-77053.herokuapp.com/orderDetails`)
+            fetch(`https://manufacture-n.herokuapp.com/orderDetails`)
                 .then(res => res.json())
                 .then(data => setAllOrders(data))
         }, [])

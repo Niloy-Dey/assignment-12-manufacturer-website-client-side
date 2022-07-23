@@ -50,7 +50,7 @@ const Purchase = () => {
             Email: email
         }
         // console.log(email);
-        fetch(`https://mysterious-forest-77053.herokuapp.com/orderDetails/`, {
+        fetch(`https://manufacture-n.herokuapp.com/orderDetails/`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
